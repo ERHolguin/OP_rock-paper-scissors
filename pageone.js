@@ -1,7 +1,13 @@
 // Pseudocode
 
-// Get computer choice: random b/t rock, paper
-// scissors. 
+
+    function getComputerChoice () { // create funtion for computer choice
+        let computerChoice = ["Rock", "Paper", "Scissors"]; // declare computer choice selectios
+        return computerChoice[Math.floor(Math.random() * computerChoice.length)] // return results
+    }
+    
+    console.log(getComputerChoice());
+
 // Create data for player choice.
 // Get player choice. Must be case insensitive.
 // Create round 1 top include player & computer.
