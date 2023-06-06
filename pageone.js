@@ -34,11 +34,11 @@
             (playerSelection == "PAPER" || "Paper" || "paper" && computerSelection =="Scissors"){
             alert("You lose! Scissors beats Paper");
         }else if
-        (playerSelection == "SCISSORS", "Scissors", "scissors" && computerSelection =="paper"){
-        alert("You win! Scissors beats Paper");
+        (playerSelection == "SCISSORS"|| "Scissors"|| "scissors" && computerSelection =="paper"){
+            alert("You win! Scissors beats Paper");
         }else if
-        (playerSelection == "SCISSORS", "Scissors", "scissors" && computerSelection =="rock"){
-        alert("You lose! Rock beats Scissors");
+        (playerSelection == "SCISSORS"|| "Scissors"|| "scissors" && computerSelection =="rock"){
+            alert("You lose! Rock beats Scissors");
         }else 
             alert("It's a tie! Please try again.");
         }           
