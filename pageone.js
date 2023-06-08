@@ -6,7 +6,7 @@
         return computerChoice[Math.floor(Math.random() * computerChoice.length)] 
     }
     
-//console.log(getComputerChoice()); check point
+console.log(getComputerChoice()); 
 
 
 // Declare computer selection.
@@ -15,7 +15,7 @@
 
 // console.log(computerSelection); check point
 
-    const playerSelection = ["ROCK", "Rock", "rock", "PAPER", "Paper", "paper", "SCISSORS", "Scissors", "scissors"]; 
+    //const  = ["ROCK", "Rock", "rock", "PAPER", "Paper", "paper", "SCISSORS", "Scissors", "scissors"]; 
 
 
     //Ask player for their guess.   
@@ -25,26 +25,40 @@
 // Create 5-round game. 
 
      for(i=0; i<5;i++) { 
-        if(playerSelection === computerSelection) {
-            alert("It's a tie! Please try again");
+        if(game === computerSelection) {
+            //alert("It's a tie! Please try again");
+            console.log (`${game}, ${computerSelection}`);
         }
-        if(playerSelection === "ROCK" || "Rock" || "rock" && computerSelection ==="Scissors"){
-            alert("You win! Rock beats Scissors");
+
+        if(game === "ROCK" || "Rock" || "rock" && computerSelection ==="Scissors"){
+            //alert("You win! Rock beats Scissors");
+            console.log (`${game}, ${computerSelection}`);
         }
-        else if(playerSelection === "ROCK" || "Rock" || "rock" && computerSelection ==="Paper"){
-            alert("You lose! Paper beats Rock");
+        
+
+        else if(game === "ROCK" || "Rock" || "rock" && computerSelection ==="Paper"){
+            //alert("You lose! Paper beats Rock");
+            console.log (`${game}, ${computerSelection}`);
         }
-        else if(playerSelection === "PAPER" || "Paper" || "paper" && computerSelection ==="Rock"){
-            alert("You win! Paper beats Rock");
+
+        else if(game === "PAPER" || "Paper" || "paper" && computerSelection ==="Rock"){
+            //alert("You win! Paper beats Rock");
+            console.log (`${game}, ${computerSelection}`);
         }
-        else if(playerSelection === "PAPER" || "Paper" || "paper" && computerSelection ==="Scissors"){
-            alert("You lose! Scissors beats Paper");
+        
+        else if(game === "PAPER" || "Paper" || "paper" && computerSelection ==="Scissors"){
+           
+         //alert("You lose! Scissors beats Paper");
+         console.log (`${game}, ${computerSelection}`);
         }
-        else if(playerSelection === "SCISSORS"|| "Scissors"|| "scissors" && computerSelection ==="paper"){
-            alert("You win! Scissors beats Paper");
+       
+        else if(game === "SCISSORS"|| "Scissors"|| "scissors" && computerSelection ==="paper"){
+            //alert("You win! Scissors beats Paper");
+            console.log (`${game}, ${computerSelection}`);
         }
-        else if(playerSelection === "SCISSORS"|| "Scissors"|| "scissors" && computerSelection ==="rock"){
-            alert("You lose! Rock beats Scissors");
+        else if(game === "SCISSORS"|| "Scissors"|| "scissors" && computerSelection ==="rock"){
+            //alert("You lose! Rock beats Scissors");
+            console.log (`${game}, ${computerSelection}`);
         }
         else {
             alert("Invalid Input");
