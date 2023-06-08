@@ -1,71 +1,7 @@
-// Create funtion for computer choice.
-// Declare computer choice selections.
-// Return results.
+// Create funtion for computer choice; declare computer choice selections; return results.
     function getComputerChoice () { 
         let computerChoice = ["Rock", "Paper", "Scissors"]; 
         return computerChoice[Math.floor(Math.random() * computerChoice.length)] 
     }
     
-console.log(getComputerChoice()); 
 
-
-// Declare computer selection.
-// Declare player choice. Must be case insensitive.
-    const computerSelection = (getComputerChoice()); 
-
-// console.log(computerSelection); check point
-
-    //const  = ["ROCK", "Rock", "rock", "PAPER", "Paper", "paper", "SCISSORS", "Scissors", "scissors"]; 
-
-
-    //Ask player for their guess.   
-    let game = prompt("Rock, Paper, Scissors, Shoot!"); 
-
-// Create round 1 to include player & computer.
-// Create 5-round game. 
-
-     for(i=0; i<5;i++) { 
-        if(game === computerSelection) {
-            //alert("It's a tie! Please try again");
-            console.log (`${game}, ${computerSelection}`);
-        }
-
-        if(game === "ROCK" || "Rock" || "rock" && computerSelection ==="Scissors"){
-            //alert("You win! Rock beats Scissors");
-            console.log (`${game}, ${computerSelection}`);
-        }
-        
-
-        else if(game === "ROCK" || "Rock" || "rock" && computerSelection ==="Paper"){
-            //alert("You lose! Paper beats Rock");
-            console.log (`${game}, ${computerSelection}`);
-        }
-
-        else if(game === "PAPER" || "Paper" || "paper" && computerSelection ==="Rock"){
-            //alert("You win! Paper beats Rock");
-            console.log (`${game}, ${computerSelection}`);
-        }
-        
-        else if(game === "PAPER" || "Paper" || "paper" && computerSelection ==="Scissors"){
-           
-         //alert("You lose! Scissors beats Paper");
-         console.log (`${game}, ${computerSelection}`);
-        }
-       
-        else if(game === "SCISSORS"|| "Scissors"|| "scissors" && computerSelection ==="paper"){
-            //alert("You win! Scissors beats Paper");
-            console.log (`${game}, ${computerSelection}`);
-        }
-        else if(game === "SCISSORS"|| "Scissors"|| "scissors" && computerSelection ==="rock"){
-            //alert("You lose! Rock beats Scissors");
-            console.log (`${game}, ${computerSelection}`);
-        }
-        else {
-            alert("Invalid Input");
-        }   
-        
-    }
-//console.log(i); check point
-// Return result prompt to declare winner.
-// Games must keep score. 
-// Must report a winner & loser at the end. 
