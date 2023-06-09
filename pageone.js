@@ -14,6 +14,9 @@
         const playerSelection = "rock" || "paper" || "scissors";
         const computerSelection = getComputerChoice();
     //console.log(playRound(playerSelection, computerSelection));
+    //console.log(playerSelection);
 
    
 //Make function's playerSelection parameter case-insensitive
+        const caseInsensitive = playerSelection.toLowerCase();
+//console.log(caseInsensitive);
