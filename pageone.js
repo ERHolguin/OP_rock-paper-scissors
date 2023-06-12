@@ -6,15 +6,15 @@
         //console.log(getComputerChoice());
 
     // Request player input + make function's playerSelection parameter case-insensitive  
-    const playerSelection = prompt("Rock, Paper, Scissors, Shoot!");
+    const playerSelection = prompt("Rock, Paper, Scissors, Shoot!").toLowerCase();
     const computerSelection = getComputerChoice(); 
 
     //Write a function that plays a single round of Rock Paper Scissors with player + computer.
     function playRound(playerSelection, computerSelection) {
-
+        return (playerSelection, computerSelection);
     }
 
-                //Define game conditions.
+    //Define game conditions.
                 if (playerSelection === computerSelection) {
                     alert("It's a tie! Please try again");
             } else if(playerSelection === "rock" && computerSelection ==="scissors") {
@@ -33,7 +33,14 @@
                     alert("Invalid Input");
             }
 
-    console.log (`${playerSelection}, ${computerSelection}`);
+        //console.log (`${playerSelection}, ${computerSelection}`);
+
+    
+        // Create 5-round game.
+  
+    // Return result prompt to declare winner.
+    // Games must keep score.
+    // Must report a winner & loser at the end.
 
 
 
