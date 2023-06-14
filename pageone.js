@@ -1,20 +1,22 @@
     // Create a funtion to generate computer choice.
     function getComputerChoice() { 
-        let computerChoice = ["rock", "paper", "scissors"]; 
+        let computerChoice = ['rock', 'paper', 'scissors']; 
         return computerChoice[Math.floor(Math.random() * computerChoice.length)] 
     }
         //console.log(getComputerChoice());
 
-    // Request player input + make function's playerSelection parameter case-insensitive  
-    const playerSelection = prompt("Rock, Paper, Scissors, Shoot!").toLowerCase();
-    const computerSelection = getComputerChoice(); 
-
     //Write a function that plays a single round of Rock Paper Scissors with player + computer.
     function playRound(playerSelection, computerSelection) {
-        return (playerSelection, computerSelection);
+        console.log(playerSelection + ', ' + computerSelection);
     }
+        // Request player input + make function's playerSelection parameter case-insensitive  
+        let userInput = prompt("Rock, Paper, Scissors, Shoot!");
+        let playerSelection = userInput?.toLowerCase();
+        let computerSelection = getComputerChoice();
 
+        playRound(playerSelection, computerSelection);
     //Define game conditions.
+        
                 if (playerSelection === computerSelection) {
                     alert("It's a tie! Please try again");
             } else if(playerSelection === "rock" && computerSelection ==="scissors") {
@@ -32,11 +34,13 @@
             } else {
                     alert("Invalid Input");
             }
-
+       
         //console.log (`${playerSelection}, ${computerSelection}`);
 
-    
         // Create 5-round game.
+            //for (let i = 0; i <5; i++) {
+                //console.log(playRound(), i);            
+            //}
   
     // Return result prompt to declare winner.
     // Games must keep score.
