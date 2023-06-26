@@ -9,15 +9,12 @@
         let playerScore = 0;
         let computerScore = 0;
     
-        function updatePlayerScore() {
+        function updateScore() {
             playerScore += 0;
             console.log("Player Score:", playerScore);
-        }
-    
-        function updateComputerScore() {
             computerScore += 0;
-            console.log("Computer Score:", computerScore);
-        }
+            console.log("Computer Score:", computerScore);     
+            }
 
     //Write a function that plays a single round of Rock Paper Scissors with player + computer.
     function playRound() {
@@ -26,8 +23,7 @@
         const computerSelection = getComputerChoice();
             //Define game conditions.                            
             if (playerSelection === computerSelection) {
-                updatePlayerScore();
-                updateComputerScore();
+                updateScore();
                 return "It's a tie! Please try again";
             } else if(playerSelection === "rock" && computerSelection ==="scissors") {
                 playerScore += 1;
@@ -57,7 +53,6 @@
                 return "Invalid Input";
             }
     }     
-     
 
         // Create a 5-round game                   
         function game() {
@@ -67,21 +62,15 @@
 
         }
 
-        // Must report a winner & loser at the end.
-        function champion() {
-                if (playerScore === 3) {
-                return "You win! Human beats Robot!"
-                } else if(playerScore === 2 && computerScore === 2) {
-                } else {
-                return "It's a tie! Would you like to try again?";
-          }
-        }
-
-2
         game(); // Call the function to initiate the game.
-        updatePlayerScore();
-        updateComputerScore();
-        champion();
+        updateScore();
+        if (playerScore === 3) {
+            console.log("You win! Human beats Robot!");
+            } else if(playerScore === 2 && computerScore === 2) {
+            console.log("It's a tie! Would you like to try again?");
+            } else {
+            console.log("You lose! Robot beats Human");
+        } 
           
 
 
