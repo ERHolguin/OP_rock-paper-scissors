@@ -10,12 +10,12 @@
         let computerScore = 0;
     
         function updatePlayerScore() {
-            playerScore += 1;
+            playerScore += 0;
             console.log("Player Score:", playerScore);
         }
     
         function updateComputerScore() {
-            computerScore += 1;
+            computerScore += 0;
             console.log("Computer Score:", computerScore);
         }
 
@@ -26,24 +26,32 @@
         const computerSelection = getComputerChoice();
             //Define game conditions.                            
             if (playerSelection === computerSelection) {
-            return "It's a tie! Please try again";
+                updatePlayerScore();
+                updateComputerScore();
+                return "It's a tie! Please try again";
             } else if(playerSelection === "rock" && computerSelection ==="scissors") {
-                updatePlayerScore(1);
+                playerScore += 1;
+                computerScore += 0;
                 return "You win! Rock beats Scissors";
-            } else if(playerSelection === "rock" && computerSelection ==="paper") {
-                updateComputerScore(1);
+            } else if(playerSelection === "rock" && computerSelection ==="paper") {      
+                playerScore += 0;
+                computerScore += 1;
                 return "You lose! Paper beats Rock";
             } else if(playerSelection === "paper" && computerSelection ==="rock") { 
-                updatePlayerScore(1);
+                playerScore += 1;
+                computerScore += 0;
                 return "You win! Paper beats Rock";
             } else if(playerSelection === "paper" && computerSelection ==="scissors") {
-                updateComputerScore(1);
+                playerScore += 0;
+                computerScore += 1;
                 return "You lose! Scissors beat Paper";
             } else if(playerSelection === "scissors" && computerSelection ==="paper") {
-                updatePlayerScore(1);
+                playerScore += 1;
+                computerScore += 0;
                 return "You win! Scissors beat Paper";
             } else if(playerSelection === "scissors" && computerSelection ==="rock") {
-                updateComputerScore(1);
+                playerScore += 0;
+                computerScore += 1;
                 return "You lose! Rock beats Scissors";
             } else {
                 return "Invalid Input";
@@ -58,19 +66,23 @@
             }
 
         }
+
+        // Must report a winner & loser at the end.
+        function champion() {
+                if (playerScore === 3) {
+                return "You win! Human beats Robot!"
+                } else if(playerScore === 2 && computerScore === 2) {
+                } else {
+                return "It's a tie! Would you like to try again?";
+          }
+        }
+
+2
         game(); // Call the function to initiate the game.
         updatePlayerScore();
         updateComputerScore();
+        champion();
           
-
-
-    // Must report a winner & loser at the end.
-    //if (playerScore === 3) {
-        //return "You win! Human beats Robot!"
-           // } else {
-        //return "You lose! Machine beats Human!";
-        //}
-
 
 
 
