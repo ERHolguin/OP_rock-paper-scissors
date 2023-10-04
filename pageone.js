@@ -3,25 +3,36 @@
         let computerChoice = ['rock', 'paper', 'scissors']; 
         return computerChoice[Math.floor(Math.random() * computerChoice.length)] 
     }
-        // console.log(getComputerChoice());
 
-        // Game must keep score.
-        let playerScore = 0;
-        let computerScore = 0;
-    
+
+    const playerButtons = document.querySelectorAll("button");
+        playerButtons.forEach((button) => {
+        button.addEventListener("click", getPlayerChoice)
+        });
+
+
+     function getPlayerChoice(e) {
+        console.log(e.target.id);
+     }
+
+
+/*
+
+
+    let playerScore = 0;
+    let computerScore = 0;
+        
         function updateScore() {
             playerScore += 0;
             console.log("Player Score:", playerScore);
             computerScore += 0;
             console.log("Computer Score:", computerScore);     
-            }
-
-    //Write a function that plays a single round of Rock Paper Scissors with player + computer.
+        }              
+    
     function playRound() {
-        let userInput = prompt('Rock, Paper, Scissors, Shoot!'); // Request player input  
-        const playerSelection = userInput?.toLowerCase(); // Make function's playerSelection parameter case-insensitive. Used chaining operator to throw off null errors.
         const computerSelection = getComputerChoice();
-            //Define game conditions.                            
+        const playerSelection = button.id;
+
             if (playerSelection === computerSelection) {
                 updateScore();
                 return "It's a tie! Please try again.";
@@ -47,20 +58,22 @@
                 return "You win! Scissors beat Paper.";
             } else if(playerSelection === "scissors" && computerSelection ==="rock") {
                 playerScore += 0;
-                computerScore += 1;
+                computerScore += 1;9
                 return "You lose! Rock beats Scissors.";
             } else {
                 return "Invalid Input";
             }
     }     
+    
 
+    /*
         // Create a 5-round game                   
         function game() {
             for (let i = 0; i < 5; i++){
                 console.log(playRound());
             }
 
-        }
+        } 
 
         game(); // Call the function to initiate the game.
         updateScore();
@@ -72,8 +85,6 @@
             console.log("You lose! Robot beats Human.");
         } 
           
-
-
-
+*/
 
     
