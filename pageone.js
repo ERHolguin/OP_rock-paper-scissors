@@ -1,22 +1,12 @@
-    // Create a funtion to generate computer choice.
     function getComputerChoice() { 
         let computerChoice = ['rock', 'paper', 'scissors']; 
         return computerChoice[Math.floor(Math.random() * computerChoice.length)] 
     }
 
-
     const playerButtons = document.querySelectorAll("button");
         playerButtons.forEach((button) => {
-        button.addEventListener("click", getPlayerChoice)
+        button.addEventListener("click", playRound)
         });
-
-
-     function getPlayerChoice(e) {
-        console.log(e.target.id);
-     }
-
-
-/*
 
 
     let playerScore = 0;
@@ -29,34 +19,33 @@
             console.log("Computer Score:", computerScore);     
         }              
     
-    function playRound() {
+    function playRound(e) {
         const computerSelection = getComputerChoice();
-        const playerSelection = button.id;
 
-            if (playerSelection === computerSelection) {
+            if (e.target.id === computerSelection) {
                 updateScore();
                 return "It's a tie! Please try again.";
-            } else if(playerSelection === "rock" && computerSelection ==="scissors") {
+            } else if(e.target.id === "rock" && computerSelection ==="scissors") {
                 playerScore += 1;
                 computerScore += 0;
                 return "You win! Rock beats Scissors.";
-            } else if(playerSelection === "rock" && computerSelection ==="paper") {      
+            } else if(e.target.id === "rock" && computerSelection ==="paper") {      
                 playerScore += 0;
                 computerScore += 1;
                 return "You lose! Paper beats Rock.";
-            } else if(playerSelection === "paper" && computerSelection ==="rock") { 
+            } else if(e.target.id === "paper" && computerSelection ==="rock") { 
                 playerScore += 1;
                 computerScore += 0;
                 return "You win! Paper beats Rock.";
-            } else if(playerSelection === "paper" && computerSelection ==="scissors") {
+            } else if(e.target.id === "paper" && computerSelection ==="scissors") {
                 playerScore += 0;
                 computerScore += 1;
                 return "You lose! Scissors beat Paper.";
-            } else if(playerSelection === "scissors" && computerSelection ==="paper") {
+            } else if(e.target.id === "scissors" && computerSelection ==="paper") {
                 playerScore += 1;
                 computerScore += 0;
                 return "You win! Scissors beat Paper.";
-            } else if(playerSelection === "scissors" && computerSelection ==="rock") {
+            } else if(e.target.id === "scissors" && computerSelection ==="rock") {
                 playerScore += 0;
                 computerScore += 1;9
                 return "You lose! Rock beats Scissors.";
