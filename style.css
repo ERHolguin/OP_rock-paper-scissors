@@ -1,0 +1,27 @@
+#buttonContainer {
+    margin-bottom: 50px;
+}
+
+#scores {
+width: 300px;
+height: 100px;
+border: 1px solid black;
+box-sizing: border-box;
+background-color: yellow;
+}
+
+#playerScore,
+#playerScorePara {
+    display: inline;
+}
+
+#playerScorePara {
+    margin-right: 50px;
+}
+
+#computerScore,
+#computerScorePara {
+    display: inline;
+}
+
+
