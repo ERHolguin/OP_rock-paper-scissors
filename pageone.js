@@ -3,13 +3,23 @@
         return computerChoice[Math.floor(Math.random() * computerChoice.length)] 
     }
 
+    let clickCount = 0;
+    let clickCountDisplay = document.getElementById('clickCount');
     const playerButtons = document.querySelectorAll('button');
         playerButtons.forEach((button) => {
-        button.addEventListener('click', playRound)
-        });
+            button.addEventListener('click', playRound)
+            });
         playerButtons.forEach((button) => {
             button.addEventListener('click', updateScore)
             });
+
+
+        /*playerButtons.forEach((button) => {
+            button.removeEventListener('click', playRound)
+            });
+        playerButtons.forEach((button) => {
+            button.removeEventListener('click', updateScore)
+            });*/
         
     let playerScore = 0;
     let computerScore = 0;
@@ -24,10 +34,10 @@
     function playRound(e) {
         const computerSelection = getComputerChoice();
         const playerSelection = e.target.id
-            //console.log(playerSelection);
-
-    const playerScorePara = document.getElementById('playerScorePara').innerText = playerScore;
-    const computerScorePara = document.getElementById('computerScorePara').innerText = computerScore;
+        const playerScorePara = document.getElementById('playerScorePara').innerText = playerScore;
+        const computerScorePara = document.getElementById('computerScorePara').innerText = computerScore;
+        clickCount++;
+        clickCountDisplay.innerText = clickCount;
 
             if (playerSelection === computerSelection) {
                 updateScore();
@@ -60,9 +70,36 @@
                 return 'Invalid Input';
             }
             
-    }     
+    }
+    /*
+    function endGame(e) {
+        if (clickCount === clicks) {
+            playerButtons.forEach((button) => {
+            button.removeEventListener('click', playRound)
+            });
+        playerButtons.forEach((button) => {
+            button.removeEventListener('click', updateScore)
+            });
+        }
+    }
 
-/*
+    removeEventListenerAfterClicks(button, 'click', endGame, 5);
+
+
+        // give results
+                if (playerScore >= 3) {
+            console.log('You win! Human beats Robot!');
+            } else if(playerScore === 2 && computerScore === 2) {
+            console.log('It/s a tie! Would you like to try again?');
+            } else if (computerScore === 3) {
+            console.log('You lose! Robot beats Human.');
+        // then give player option to retsart the game
+        // reset score updater to zero 
+
+        } 
+    }
+
+
         // Create a 5-round game                   
         function game() {
             for (let i = 0; i < 5; i++){
@@ -71,16 +108,9 @@
 
         } 
 
-        game(); 
-        updateScore();
-        if (playerScore >= 3) {
-            console.log('You win! Human beats Robot!');
-            } else if(playerScore === 2 && computerScore === 2) {
-            console.log('It's a tie! Would you like to try again?');
-            } else {
-            console.log('You lose! Robot beats Human.');
-        } 
+        game(); */
+
+
           
-*/
 
     
