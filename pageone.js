@@ -3,45 +3,71 @@
         return computerChoice[Math.floor(Math.random() * computerChoice.length)] 
     }
 
-    const playerButtons = document.querySelectorAll('button');
-        playerButtons.forEach((button) => {
-            button.addEventListener('click', playRound)
-            });
-        playerButtons.forEach((button) => {
-            button.addEventListener('click', updateScore)
-            });
+    let playerButtons = ['rock', 'paper', 'scissors'];
+       for(let i =0; i < playerButtons.length; i++) {
+        document.getElementById(playerButtons[i]).addEventListener('click', playRound);
+       }
+       for(let i =0; i < playerButtons.length; i++) {
+        document.getElementById(playerButtons[i]).addEventListener('click', updateScore);
+       }
         
+    // create new function here to update the score similar to resetScore function below
     let playerScore = 0;
     let computerScore = 0;
 
+    // change this function to declareWinner
     function updateScore() {
     let resultMessage = document.getElementById('resultMessage');
-    const playerScorePara = document.getElementById('playerScorePara').innerText = playerScore;
-    const computerScorePara = document.getElementById('computerScorePara').innerText = computerScore;
+    let playerScorePara = document.getElementById('playerScorePara').innerText = playerScore;
+    let computerScorePara = document.getElementById('computerScorePara').innerText = computerScore;
         playerScore += 0;
         computerScore += 0;
             if (playerScore === 5) {
-                playerButtons.forEach((button) => {
-                    button.disabled = true });
-                playerButtons.forEach((button) => {
-                    button.removeEventListener('click', playRound)
-                    });
-                playerButtons.forEach((button) => {
-                    button.removeEventListener('click', updateScore)
-                    });
+                for(let i =0; i < playerButtons.length; i++) {
+                    document.getElementById(playerButtons[i]).disabled = true }
+                for(let i =0; i < playerButtons.length; i++) {
+                    document.getElementById(playerButtons[i]).addEventListener('click', playRound);
+                   }
+                for(let i =0; i < playerButtons.length; i++) {
+                    document.getElementById(playerButtons[i]).addEventListener('click', updateScore);
+                   }
                 resultMessage.innerText = 'You win! Human beats Robot!';
             } else if (computerScore === 5) {
-                playerButtons.forEach((button) => {
-                    button.disabled = true });
-                playerButtons.forEach((button) => {
-                    button.removeEventListener('click', playRound)
-                    });
-                playerButtons.forEach((button) => {
-                    button.removeEventListener('click', updateScore)
-                    });
+                for(let i =0; i < playerButtons.length; i++) {
+                    document.getElementById(playerButtons[i]).disabled = true }
+                for(let i =0; i < playerButtons.length; i++) {
+                    document.getElementById(playerButtons[i]).addEventListener('click', playRound);
+                   }
+                   for(let i =0; i < playerButtons.length; i++) {
+                    document.getElementById(playerButtons[i]).addEventListener('click', updateScore);
+                   }
                 resultMessage.innerText ='You lose! Robot beats Human.';
             } 
         }
+
+        function resetScore() {
+            playerScore = 0;
+            computerScore = 0;
+                let playerScorePara = document.getElementById('playerScorePara').innerText = playerScore;
+                let computerScorePara = document.getElementById('computerScorePara').innerText = computerScore;
+        }
+    
+        function resetGame() {
+            resetScore();
+            for(let i =0; i < playerButtons.length; i++) {
+                document.getElementById(playerButtons[i]).disabled = false }
+            for(let i =0; i < playerButtons.length; i++) {
+            document.getElementById(playerButtons[i]).addEventListener('click', playRound);
+            }
+            for(let i =0; i < playerButtons.length; i++) {
+            document.getElementById(playerButtons[i]).addEventListener('click', updateScore);
+            }  
+            playerScore += 0;
+            computerScore += 0;   
+            }
+    
+        let gameRestartButton = document.getElementById('playAgain');
+        gameRestartButton.addEventListener('click', resetGame);
 
     function playRound(e) {
         const computerSelection = getComputerChoice();
