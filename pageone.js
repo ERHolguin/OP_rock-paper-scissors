@@ -14,7 +14,7 @@
     let playerScore = 0;
     let computerScore = 0;
 
-   function updateScore() {
+    function updateScore() {
     let resultMessage = document.getElementById('resultMessage');
     const playerScorePara = document.getElementById('playerScorePara').innerText = playerScore;
     const computerScorePara = document.getElementById('computerScorePara').innerText = computerScore;
@@ -46,36 +46,34 @@
     function playRound(e) {
         const computerSelection = getComputerChoice();
         const playerSelection = e.target.id
-
+        let playRoundMessage = document.getElementById('playRoundMessage');
             if (playerSelection === computerSelection) {
                 updateScore();
-                return 'It/s a tie! Please try again.';
+                playRoundMessage.innerText = 'It\'s a tie! Please try again.';
             } else if(playerSelection === 'rock' && computerSelection ==='scissors') {
                 playerScore += 1;
                 computerScore += 0;
-                return 'You win! Rock beats Scissors.';
+                playRoundMessage.innerText = 'You win! Rock beats Scissors.';
             } else if(playerSelection === 'rock' && computerSelection ==='paper') {      
                 playerScore += 0;
                 computerScore += 1;
-                return 'You lose! Paper beats Rock.';
+                playRoundMessage.innerText = 'You lose! Paper beats Rock.';
             } else if(playerSelection === 'paper' && computerSelection ==='rock') { 
                 playerScore += 1;
                 computerScore += 0;
-                return 'You win! Paper beats Rock.';
+                playRoundMessage.innerText = 'You win! Paper beats Rock.';
             } else if(playerSelection === 'paper' && computerSelection ==='scissors') {
                 playerScore += 0;
                 computerScore += 1;
-                return 'You lose! Scissors beat Paper.';
+                playRoundMessage.innerText = 'You lose! Scissors beat Paper.';
             } else if(playerSelection === 'scissors' && computerSelection ==='paper') {
                 playerScore += 1;
                 computerScore += 0;
-                return 'You win! Scissors beat Paper.';
+                playRoundMessage.innerText = 'You win! Scissors beat Paper.';
             } else if(playerSelection === 'scissors' && computerSelection ==='rock') {
                 playerScore += 0;
                 computerScore += 1;
-                return 'You lose! Rock beats Scissors.';
-            } else {
-                return 'Invalid Input';
+                playRoundMessage.innerText = 'You lose! Rock beats Scissors.';
             }
             
     }
