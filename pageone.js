@@ -99,9 +99,9 @@
         computerScore += 0;   
         }
 
-    let gameRestartButton = document.getElementById('playAgain');
-    gameRestartButton.addEventListener('click', resetScore);
-    gameRestartButton.addEventListener('click', resetGame);
+    let gameResetButton = document.getElementById('playAgain');
+    gameResetButton.addEventListener('click', resetScore);
+    gameResetButton.addEventListener('click', resetGame);
 
           
 
