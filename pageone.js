@@ -8,18 +8,19 @@
         document.getElementById(playerButtons[i]).addEventListener('click', playRound);
        }
        for(let i =0; i < playerButtons.length; i++) {
-        document.getElementById(playerButtons[i]).addEventListener('click', updateScore);
+        document.getElementById(playerButtons[i]).addEventListener('click', declareWinnerAndLoser);
        }
         
     // create new function here to update the score similar to resetScore function below
+
     let playerScore = 0;
     let computerScore = 0;
 
     // change this function to declareWinner
-    function updateScore() {
-    let resultMessage = document.getElementById('resultMessage');
+    function declareWinnerAndLoser() {
     let playerScorePara = document.getElementById('playerScorePara').innerText = playerScore;
     let computerScorePara = document.getElementById('computerScorePara').innerText = computerScore;
+    let resultMessage = document.getElementById('resultMessage');
         playerScore += 0;
         computerScore += 0;
             if (playerScore === 5) {
@@ -29,7 +30,7 @@
                     document.getElementById(playerButtons[i]).addEventListener('click', playRound);
                    }
                 for(let i =0; i < playerButtons.length; i++) {
-                    document.getElementById(playerButtons[i]).addEventListener('click', updateScore);
+                    document.getElementById(playerButtons[i]).addEventListener('click', declareWinnerAndLoser);
                    }
                 resultMessage.innerText = 'You win! Human beats Robot!';
             } else if (computerScore === 5) {
@@ -39,42 +40,19 @@
                     document.getElementById(playerButtons[i]).addEventListener('click', playRound);
                    }
                    for(let i =0; i < playerButtons.length; i++) {
-                    document.getElementById(playerButtons[i]).addEventListener('click', updateScore);
+                    document.getElementById(playerButtons[i]).addEventListener('click', declareWinnerAndLoser);
                    }
                 resultMessage.innerText ='You lose! Robot beats Human.';
             } 
         }
-
-        function resetScore() {
-            playerScore = 0;
-            computerScore = 0;
-                let playerScorePara = document.getElementById('playerScorePara').innerText = playerScore;
-                let computerScorePara = document.getElementById('computerScorePara').innerText = computerScore;
-        }
-    
-        function resetGame() {
-            resetScore();
-            for(let i =0; i < playerButtons.length; i++) {
-                document.getElementById(playerButtons[i]).disabled = false }
-            for(let i =0; i < playerButtons.length; i++) {
-            document.getElementById(playerButtons[i]).addEventListener('click', playRound);
-            }
-            for(let i =0; i < playerButtons.length; i++) {
-            document.getElementById(playerButtons[i]).addEventListener('click', updateScore);
-            }  
-            playerScore += 0;
-            computerScore += 0;   
-            }
-    
-        let gameRestartButton = document.getElementById('playAgain');
-        gameRestartButton.addEventListener('click', resetGame);
 
     function playRound(e) {
         const computerSelection = getComputerChoice();
         const playerSelection = e.target.id
         let playRoundMessage = document.getElementById('playRoundMessage');
             if (playerSelection === computerSelection) {
-                updateScore();
+                playerScore += 0;
+                computerScore += 0;
                 playRoundMessage.innerText = 'It\'s a tie! Please try again.';
             } else if(playerSelection === 'rock' && computerSelection ==='scissors') {
                 playerScore += 1;
@@ -104,6 +82,29 @@
             
     }
 
+    function resetScore() {
+        playerScore = 0;
+        computerScore = 0;
+        let playerScorePara = document.getElementById('playerScorePara').innerText = playerScore;
+        let computerScorePara = document.getElementById('computerScorePara').innerText = computerScore;
+    }
+
+    function resetGame() {
+        for(let i =0; i < playerButtons.length; i++) {
+            document.getElementById(playerButtons[i]).disabled = false }
+        for(let i =0; i < playerButtons.length; i++) {
+        document.getElementById(playerButtons[i]).addEventListener('click', playRound);
+        }
+        for(let i =0; i < playerButtons.length; i++) {
+        document.getElementById(playerButtons[i]).addEventListener('click', declareWinnerAndLoser);
+        }  
+        playerScore += 0;
+        computerScore += 0;   
+        }
+
+    let gameRestartButton = document.getElementById('playAgain');
+    gameRestartButton.addEventListener('click', resetScore);
+    gameRestartButton.addEventListener('click', resetGame);
 
    /* 
 
