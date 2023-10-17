@@ -11,12 +11,9 @@
         document.getElementById(playerButtons[i]).addEventListener('click', declareWinnerAndLoser);
        }
         
-    // create new function here to update the score similar to resetScore function below
-
     let playerScore = 0;
     let computerScore = 0;
 
-    // change this function to declareWinner
     function declareWinnerAndLoser() {
     let playerScorePara = document.getElementById('playerScorePara').innerText = playerScore;
     let computerScorePara = document.getElementById('computerScorePara').innerText = computerScore;
@@ -105,17 +102,6 @@
     let gameRestartButton = document.getElementById('playAgain');
     gameRestartButton.addEventListener('click', resetScore);
     gameRestartButton.addEventListener('click', resetGame);
-
-   /* 
-
-   what needs to happen next?
-// give final results & announce a winner
-// then disbale player buttons 
-// then give player option to restart the game
-// reset score updater to zero
-
-*/
-
 
           
 
